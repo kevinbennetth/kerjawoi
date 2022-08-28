@@ -1,13 +1,13 @@
-require("dotenv").config();
+require("dotenv").config({path:"../.env"});
 const express = require("express");
 const mongoose = require('mongoose');
 const cors = require('cors');
 
 // Connecting to the MongoDB Cloud Database
-// mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true , useUnifiedTopology: true});
-// const db = mongoose.connection;
-// db.on('error', (error) => console.error(error));
-// db.once('open', () => console.log('Connected to database'));
+mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true , useUnifiedTopology: true});
+const db = mongoose.connection;
+db.on('error', (error) => console.error(error));
+db.once('open', () => console.log('Connected to database'));
 
 const app = express();
 app.use(cors());
