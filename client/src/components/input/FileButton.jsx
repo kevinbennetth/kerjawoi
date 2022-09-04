@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import Button from "./Button";
+import Button from "../utils/Button";
 
 const FileButton = (props) => {
   const fileInputRef = useRef();

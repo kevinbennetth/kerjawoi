@@ -1,7 +1,8 @@
 import { useReducer } from "react";
-import Button from "../components/UI/button/Button";
-import FileButton from "../components/UI/button/FileButton";
-import Input from "../components/UI/form/Input";
+import Button from "../components/utils/Button"
+import DashboardLayout from "../layouts/DashboardLayout";
+import FileButton from "../components/input/FileButton";
+import Input from "../components/input/Input";
 
 const updateData = (prevData, data) => ({
   ...prevData,
@@ -17,7 +18,7 @@ const userData = {
     "https://cdn10.bostonmagazine.com/wp-content/uploads/sites/2/2021/08/rubber-duck-stock-fb.jpg",
 };
 
-const ProfilePage = () => {
+const Profile = () => {
   const [user, dispatchUser] = useReducer(updateData, userData);
 
   const valueChangeHandler = (name, value) => {
@@ -31,7 +32,7 @@ const ProfilePage = () => {
   };
 
   return (
-    <div className="py-10 px-16">
+    <DashboardLayout>
       <h1 className="text-black text-3xl font-bold">Profile</h1>
       <div className="my-8">
         <form className="flex flex-row gap-24" onSubmit={submitHandler}>
@@ -87,8 +88,8 @@ const ProfilePage = () => {
           </div>
         </form>
       </div>
-    </div>
+    </DashboardLayout>
   );
 };
 
-export default ProfilePage;
+export default Profile;

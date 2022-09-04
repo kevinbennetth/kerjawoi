@@ -1,13 +1,14 @@
-import Calendar from "../components/UI/calendar/Calendar";
+import Calendar from "../components/content/Calendar";
+import DashboardLayout from "../layouts/DashboardLayout";
 
 const CalendarPage = () => {
   return (
-    <div className="py-10 px-16">
+    <DashboardLayout>
       <h1 className="text-black text-3xl font-bold">Calendar</h1>
       <div className="my-8">
         <Calendar />
       </div>
-    </div>
+    </DashboardLayout>
   );
 };
 
