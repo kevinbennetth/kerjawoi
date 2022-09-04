@@ -4,7 +4,7 @@ import Button from "../components/utils/Button";
 const Register = () => { 
     return (
         <div className="login flex justify-center items-center 
-        h-full bg-dark-purple ">
+        w-100 min-h-screen h-auto bg-dark-purple ">
             <div className="login-form flex flex-col items-center justify-center rounded-md 
             w-[35%] min-w-[400px] h-3/4 bg-white px-8 text-dark-purple">
                 <h4 className="font-bold text-2xl mb-12">KerjaWOI</h4>
