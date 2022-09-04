@@ -2,9 +2,9 @@ import { AiFillCalendar } from "react-icons/ai";
 import { MdLocationOn } from "react-icons/md";
 import { HiClock } from "react-icons/hi";
 
-import ProfilePic from "../assets/profilePicZoomed.png";
+import ProfilePic from "../../assets/profilePicZoomed.png";
 
-import Button from "../components/Button";
+import Button from "../utils/Button";
 
 const MeetingCard = () => {
 

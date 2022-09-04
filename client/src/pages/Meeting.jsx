@@ -1,7 +1,7 @@
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
-import TeamsHeader from '../components/TeamsHeader';
-import MeetingCard from '../components/MeetingCard';
+import TeamsHeader from '../components/contents/TeamsHeader';
+import MeetingCard from '../components/cards/MeetingCard';
 
 const Meetings = () => {
     return (
