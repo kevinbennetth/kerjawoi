@@ -1,9 +1,7 @@
-const Input = (props) => {
-  const { type, name, id, placeholder } = props;
-
+const Input = ({ type, name, id, placeholder, onChange }) => {
   const valueChangeHandler = (e) => {
     const { name, value } = e.target;
-    props.onChange(name, value);
+    onChange(name, value);
   };
 
   return (
