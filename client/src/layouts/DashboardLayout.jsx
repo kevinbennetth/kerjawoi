@@ -1,8 +1,8 @@
-import CalendarIcon from "../asset/svg/CalendarIcon";
-import DashboardIcon from "../asset/svg/DashboardIcon";
-import KerjaWoiIcon from "../asset/svg/KerjaWoiIcon";
-import LogoutIcon from "../asset/svg/LogoutIcon";
-import TeamIcon from "../asset/svg/TeamIcon";
+import CalendarIcon from "../assets/svg/CalendarIcon";
+import DashboardIcon from "../assets/svg/DashboardIcon";
+import KerjaWoiIcon from "../assets/svg/KerjaWoiIcon";
+import LogoutIcon from "../assets/svg/LogoutIcon";
+import TeamIcon from "../assets/svg/TeamIcon";
 
 const DashboardLayout = ({children})=>{
     return (
