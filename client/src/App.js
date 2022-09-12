@@ -8,8 +8,8 @@ function App() {
     <div className="flex">
       <Navigation />
       <div className="w-5/6">
-        {/* <ProfilePage/> */}
-        <CalendarPage />
+        <ProfilePage/>
+        {/* <CalendarPage /> */}
       </div>
     </div>
   );
