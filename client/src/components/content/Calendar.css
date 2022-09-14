@@ -12,5 +12,6 @@
     aspect-ratio: 1 !important;
 }
 
-.fc-h-event {
+.fc-daygrid-event {
+    cursor: pointer !important;
 }

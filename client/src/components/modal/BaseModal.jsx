@@ -15,6 +15,7 @@ const BaseModal = ({ show, onHideModal, className, children }) => {
   };
 
   useEffect(() => {
+    console.log(show)
     if (show) {
       document.body.style.overflow = "hidden";
     } else {
