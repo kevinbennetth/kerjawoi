@@ -17,12 +17,19 @@ const Settings = ()=>{
   const changeInterval = (value)=>setNotificationInterval(value);
   return (
       <DashboardLayout>
-        <Title>Team {teamName}</Title>
+        <Title size='lg'>Team {teamName}</Title>
         <Breadcrumbs paths={paths}/>
         <TeamHeader name='sekrum'/>
         <div className="mt-12">
           <h1 className="text-xl md:text-2xl text-black font-bold">General</h1>
-          <TextInput placeholder='Sekrum' name='Team Name' submit={changeTeamName}/>
+          <span className="ml-10 mt-5 text-xl font-medium flex items-center">
+            <span className="mr-20">Team Name</span>: 
+            <TextInput 
+              placeholder='Sekrum' 
+              submit={changeTeamName}
+              className='ml-4 bg-dark-white'
+            />
+          </span>
           <span className="ml-10 mt-5 text-xl font-medium flex items-center">
             <span className="mr-4">Default Permission</span>: 
             <SelectInput 
@@ -30,6 +37,7 @@ const Settings = ()=>{
               onChange={changePermission}
               value={defaultPermission}
               className='ml-4'
+              color='dark-white'
             />
           </span>
         </div>

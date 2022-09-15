@@ -18,11 +18,11 @@ const DashboardLayout = ({children})=>{
                         <DashboardIcon />
                         <p className="text-white">Dashboard</p>
                     </a>
-                    <a href='teams' className="flex flex-row items-center gap-6 cursor-pointer bg-dark-blue bg-opacity-0 hover:bg-opacity-100 transition-all p-4 rounded-md">
+                    <a href='/teams' className="flex flex-row items-center gap-6 cursor-pointer bg-dark-blue bg-opacity-0 hover:bg-opacity-100 transition-all p-4 rounded-md">
                         <TeamIcon />
                         <p className="text-white">Teams</p>
                     </a>
-                    <a href='calendar' className="flex flex-row items-center gap-6 cursor-pointer bg-dark-blue bg-opacity-0 hover:bg-opacity-100 transition-all p-4 rounded-md">
+                    <a href='/calendar' className="flex flex-row items-center gap-6 cursor-pointer bg-dark-blue bg-opacity-0 hover:bg-opacity-100 transition-all p-4 rounded-md">
                         <CalendarIcon />
                         <p className="text-white">Calendar</p>
                     </a>
@@ -40,7 +40,7 @@ const DashboardLayout = ({children})=>{
                     />
                     <div className="flex flex-col gap-1 text-white w-3/4">
                     <h4 className="text-md font-semibold">John Doe</h4>
-                    <a href='profile' className="text-xs font-light cursor-pointer">View Profile</a>
+                    <a href='/profile' className="text-xs font-light cursor-pointer">View Profile</a>
                     </div>
                 </div>
                 </nav>

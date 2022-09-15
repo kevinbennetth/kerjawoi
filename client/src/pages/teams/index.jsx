@@ -5,6 +5,7 @@ import DashboardLayout from "../../layouts/DashboardLayout";
 import PageIndicator from "../../components/utils/PageIndicator";
 import SearchFilter from "../../components/input/SearchFilter";
 import TeamCard from "../../components/cards/TeamCard";
+import TeamModal from "../../components/modal/TeamModal";
 import Title from "../../components/utils/Title";
 
 const teams = [
@@ -56,9 +57,15 @@ const Teams = ()=>{
       setPages((res.length + (6-res.length%6))/6);
     }
   }, [current]);
+  const [addTeam, setAddTeam] = useState(false);
+  const addTeamHandler = (e)=>{
+    console.log(e);
+    setAddTeam(false);
+  }
   return (
       <DashboardLayout>
-        <Title>Teams</Title>
+        {addTeam && <TeamModal show={addTeam} onHideModal={()=>setAddTeam(false)} onSubmit={addTeamHandler}/>}
+        <Title size='lg'>Teams</Title>
         <Breadcrumbs paths={paths}/>
         <div className="flex flex-col md:flex-row justify-between items-start mt-4 md:mt-8 gap-2 md:gap-0">
           <SearchFilter 
@@ -67,7 +74,7 @@ const Teams = ()=>{
             submit={setQuery}
             chooseFilters={setFilters}
           />
-          <Button color='dark-purple'>Add Team</Button>
+          <Button color='dark-purple' onClick={()=>setAddTeam(true)}>Add Team</Button>
         </div>
         <div className="z-10 flex flex-row gap-10 flex-wrap justify-center p-2 mt-2">
           {allTeams.slice((current-1)*6, current*6).map((team, key)=><TeamCard 

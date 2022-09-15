@@ -1,4 +1,3 @@
-
 import Button from "../components/utils/Button";
 
 const Register = () => { 

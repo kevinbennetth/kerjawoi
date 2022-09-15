@@ -4,6 +4,7 @@ import Button from "../../components/utils/Button";
 import DashboardLayout from "../../layouts/DashboardLayout";
 import PageIndicator from "../../components/utils/PageIndicator";
 import ProjectCard from "../../components/cards/ProjectCard";
+import ProjectModal from "../../components/modal/ProjectModal";
 import SearchFilter from "../../components/input/SearchFilter";
 import TeamHeader from "../../components/content/TeamHeader";
 import Title from "../../components/utils/Title";
@@ -33,7 +34,6 @@ const ProjectDashboard = ()=>{
     if(current<pages){
       setCurrent(current+1);
     }
-    
   }
   useEffect(()=>{
     let res = [...projects, ...projects, ...projects, ...projects, ...projects];
@@ -45,9 +45,19 @@ const ProjectDashboard = ()=>{
       setPages((res.length + (6-res.length%6))/6);
     }
   }, [current]);
+  const [addProject, setAddProject] = useState(false);
+  const addProjectHandler = (e)=>{
+    console.log(e);
+    setAddProject(false);
+  }
   return (
       <DashboardLayout>
-        <Title>Team Sekrum</Title>
+        {addProject && <ProjectModal 
+          show={addProject} 
+          onHideModal={()=>setAddProject(false)}
+          onSubmit={addProjectHandler}
+        />}
+        <Title size='lg'>Team Sekrum</Title>
         <Breadcrumbs paths={paths}/>
         <TeamHeader name='sekrum'/>
         <div className="flex flex-col md:flex-row justify-between items-start mt-4 md:mt-8 gap-2 md:gap-0">
@@ -57,7 +67,7 @@ const ProjectDashboard = ()=>{
             submit={setQuery}
             chooseFilters={setFilters}
           />
-          <Button color='dark-purple'>Add Project</Button>
+          <Button color='dark-purple' onClick={()=>setAddProject(true)}>Add Project</Button>
         </div>
         <div className="z-10 flex flex-row gap-10 flex-wrap justify-center p-2 mt-2">
           {allProjects.slice((current-1)*6, current*6).map((project, key)=><ProjectCard 
