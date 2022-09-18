@@ -10,7 +10,7 @@ const TeamLayout = () => {
       <Title size="lg">Team Sekrum</Title>
       <Breadcrumbs paths={paths} />
       <TeamHeader name="sekrum" />
-      <Outlet/>
+      <Outlet />
     </>
   );
 };

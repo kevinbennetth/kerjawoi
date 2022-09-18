@@ -25,10 +25,7 @@ const FileButton = (props) => {
         ref={fileInputRef}
         accept="image/*"
       />
-      <Button
-        type="button"
-        onClick={imageUploadHandler}
-      >
+      <Button type="button" onClick={imageUploadHandler}>
         {children}
       </Button>
     </div>

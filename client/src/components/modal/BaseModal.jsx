@@ -5,7 +5,6 @@ import { FaRegTimesCircle } from "react-icons/fa";
 const rootModal = document.getElementById("modal-root");
 
 const BaseModal = ({ show, onHideModal, className, children }) => {
-
   const modalRef = useRef();
 
   const updateRef = (e) => {
@@ -15,7 +14,7 @@ const BaseModal = ({ show, onHideModal, className, children }) => {
   };
 
   useEffect(() => {
-    console.log(show)
+    console.log(show);
     if (show) {
       document.body.style.overflow = "hidden";
     } else {
@@ -31,7 +30,9 @@ const BaseModal = ({ show, onHideModal, className, children }) => {
         ref={modalRef}
         onClick={updateRef}
       >
-        <div className={`z-50 bg-white rounded-lg p-12 shadow-lg relative max-h-[calc(100vh-210px)] overflow-y-auto ${className} animate-[pop-up_0.1s_ease-in-out] scale-100`}>
+        <div
+          className={`z-50 bg-white rounded-lg p-12 shadow-lg relative max-h-[calc(100vh-210px)] overflow-y-auto ${className} animate-[pop-up_0.1s_ease-in-out] scale-100`}
+        >
           <FaRegTimesCircle
             className="absolute right-12 top-12 text-2xl cursor-pointer"
             onClick={onHideModal}
@@ -42,6 +43,6 @@ const BaseModal = ({ show, onHideModal, className, children }) => {
       rootModal
     )
   );
-}
+};
 
 export default BaseModal;

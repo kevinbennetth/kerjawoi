@@ -1,5 +1,4 @@
 import "../assets/css/scrollbar.css";
-import DashboardLayout from "../layouts/DashboardLayout";
 import Title from "../components/utils/Title";
 import DeadlineCard from "../components/cards/DeadlineCard";
 

@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import Breadcrumbs from "../../components/utils/Breadcrumbs";
 import Button from "../../components/utils/Button";
-import DashboardLayout from "../../layouts/DashboardLayout";
 import PageIndicator from "../../components/utils/PageIndicator";
 import SearchFilter from "../../components/input/SearchFilter";
 import TeamCard from "../../components/cards/TeamCard";

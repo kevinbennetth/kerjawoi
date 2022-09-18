@@ -1,6 +1,5 @@
 import { useReducer } from "react";
-import Button from "../components/utils/Button"
-import DashboardLayout from "../layouts/DashboardLayout";
+import Button from "../components/utils/Button";
 import FileButton from "../components/input/FileButton";
 import Input from "../components/input/Input";
 

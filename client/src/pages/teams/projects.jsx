@@ -1,12 +1,9 @@
 import { useEffect, useState } from "react";
-import Breadcrumbs from "../../components/utils/Breadcrumbs";
 import Button from "../../components/utils/Button";
 import PageIndicator from "../../components/utils/PageIndicator";
 import ProjectCard from "../../components/cards/ProjectCard";
 import ProjectModal from "../../components/modal/ProjectModal";
 import SearchFilter from "../../components/input/SearchFilter";
-import TeamHeader from "../../components/content/TeamHeader";
-import Title from "../../components/utils/Title";
 
 const projects = [
   {

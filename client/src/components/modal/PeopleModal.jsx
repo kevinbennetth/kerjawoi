@@ -6,32 +6,45 @@ import TextInput from "../input/TextInput";
 const PeopleModal = ({ show, onHideModal, onSubmit }) => {
   const [peopleDetail, setPeopleDetail] = useState({});
   const [validate, setValidate] = useState(false);
-  const changeEmail= (value)=>{
+  const changeEmail = (value) => {
     setValidate(false);
-    setPeopleDetail(prev=>({...prev, email:value}));
-  }
-  const changeMessage = (value)=>{
+    setPeopleDetail((prev) => ({ ...prev, email: value }));
+  };
+  const changeMessage = (value) => {
     setValidate(false);
-    setPeopleDetail(prev=>({...prev, message:value}));
-  }
-  const submit = ()=>{
-    if(peopleDetail.email===undefined){
+    setPeopleDetail((prev) => ({ ...prev, message: value }));
+  };
+  const submit = () => {
+    if (peopleDetail.email === undefined) {
       setValidate(true);
-    }
-    else{
+    } else {
       onSubmit(peopleDetail);
     }
-  }
+  };
   return (
     <BaseModal show={show} onHideModal={onHideModal} className="w-5/12">
       <div className="text-black">
         <h3 className="text-center text-xl font-semibold mb-5">Add Project</h3>
-        {validate && <p className="p-2 rounded-md bg-[#FF0000]/50 text-white mb-3">You need to input email!!</p>}
+        {validate && (
+          <p className="p-2 rounded-md bg-[#FF0000]/50 text-white mb-3">
+            You need to input email!!
+          </p>
+        )}
         <label className="text-lg font-semibold mb-2">Email: </label>
-        <TextInput placeholder="" onChange={changeEmail} className='my-5 w-100 bg-dark-white'/>
+        <TextInput
+          placeholder=""
+          onChange={changeEmail}
+          className="my-5 w-100 bg-dark-white"
+        />
         <label className="text-lg font-semibold mb-2">Message: </label>
-        <TextInput placeholder="" onChange={changeMessage} className='my-5 w-100 h-24 bg-dark-white'/>
-        <Button color="dark-purple" onClick={submit}className='float-right'>Invite</Button>
+        <TextInput
+          placeholder=""
+          onChange={changeMessage}
+          className="my-5 w-100 h-24 bg-dark-white"
+        />
+        <Button color="dark-purple" onClick={submit} className="float-right">
+          Invite
+        </Button>
       </div>
     </BaseModal>
   );
