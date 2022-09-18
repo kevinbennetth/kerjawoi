@@ -82,11 +82,11 @@ const People = ({admin})=>{
   }
   return (
       <DashboardLayout>
-        {addPeople && <PeopleModal 
+        <PeopleModal 
           show={addPeople} 
           onHideModal={()=>setAddPeople(false)} 
           onSubmit={addPeopleHandler}
-        />}
+        />
         <Title size='lg'>Team Sekrum</Title>
         <Breadcrumbs paths={paths}/>
         <TeamHeader name='sekrum'/>
