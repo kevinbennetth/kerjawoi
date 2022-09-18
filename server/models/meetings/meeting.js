@@ -7,7 +7,8 @@ const meetingSchema = new Schema({
     startDate:{type:Date, required:true},
     endDate:{type:Date, required:true},
     location:{type:String, required:true},
-    locationTypeId:{type:Schema.Types.ObjectId, ref:"locationType", required:true}
+    locationTypeId:{type:Schema.Types.ObjectId, ref:"locationType", required:true},
+    members:[{type:Schema.Types.ObjectId, ref:"teamMember"}]
 });
 
 module.exports = mongoose.model('meeting', meetingSchema);
