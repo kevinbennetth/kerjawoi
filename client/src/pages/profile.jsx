@@ -32,7 +32,7 @@ const Profile = () => {
   };
 
   return (
-    <DashboardLayout>
+    <>
       <h1 className="text-black text-3xl font-bold">Profile</h1>
       <div className="my-8">
         <form className="flex flex-row gap-24" onSubmit={submitHandler}>
@@ -88,7 +88,7 @@ const Profile = () => {
           </div>
         </form>
       </div>
-    </DashboardLayout>
+    </>
   );
 };
 

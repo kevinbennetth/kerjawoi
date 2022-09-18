@@ -11,22 +11,29 @@ import Settings from "./pages/teams/settings";
 import Meeting from "./pages/teams/meeting";
 import Login from "./pages/login";
 import Register from "./pages/register";
+import DashboardLayout from "./layouts/DashboardLayout";
+import TeamLayout from "./layouts/TeamLayout";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Dashboard />} />
       <Route path="login" element={<Login />} />
       <Route path="register" element={<Register />} />
-      <Route path="calendar" element={<CalendarPage />} />
-      <Route path="profile" element={<Profile />} />
-      <Route path="teams" element={<Teams />} />
-      <Route path="teams/:teamId/projects" element={<ProjectDashboard />} />
-      <Route path="teams/:teamId/people" element={<People admin={true} />} />
-      <Route path="teams/:teamId/meeting" element={<Meeting />} />
-      <Route path="teams/:teamId/settings" element={<Settings />} />
-      <Route path="teams/:teamId" element={<ProjectDashboard />} />
+      <Route path="/" element={<DashboardLayout />}>
+        <Route path="" element={<Dashboard />} />
+        <Route path="calendar" element={<CalendarPage />} />
+        <Route path="profile" element={<Profile />} />
+        <Route path="teams">
+          <Route path="" element={<Teams />} />
+          <Route path=":teamId" element={<TeamLayout />}>
+            <Route index path="projects" element={<ProjectDashboard />} />
+            <Route path="people" element={<People admin={true} />} />
+            <Route path="meeting" element={<Meeting />} />
+            <Route path="settings" element={<Settings />} />
+          </Route>
+        </Route>
+      </Route>
     </Routes>
   </BrowserRouter>
 );

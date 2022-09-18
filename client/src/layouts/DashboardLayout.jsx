@@ -4,8 +4,9 @@ import DashboardIcon from "../assets/svg/DashboardIcon";
 import KerjaWoiIcon from "../assets/svg/KerjaWoiIcon";
 import LogoutIcon from "../assets/svg/LogoutIcon";
 import TeamIcon from "../assets/svg/TeamIcon";
+import { Outlet } from "react-router-dom";
 
-const DashboardLayout = ({ children }) => {
+const DashboardLayout = () => {
   return (
     <div className="lg:grid lg:grid-cols-6 w-100 min-h-screen h-auto">
       <nav className="bg-dark-purple lg:col-span-1 h-100 flex flex-col justify-between">
@@ -59,7 +60,9 @@ const DashboardLayout = ({ children }) => {
           </div>
         </div>
       </nav>
-      <div className="lg:col-span-5 p-10 bg-[#F9F9F9]">{children}</div>
+      <div className="lg:col-span-5 p-10 bg-[#F9F9F9]">
+        <Outlet />
+      </div>
     </div>
   );
 };
