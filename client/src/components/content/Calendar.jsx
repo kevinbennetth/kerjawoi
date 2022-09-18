@@ -8,18 +8,24 @@ import EventModal from "../modal/EventModal";
 
 const Calendar = () => {
   const [eventModal, setEventModal] = useState(false);
+  const [selectedEvent, setSelectedEvent] = useState(null);
 
   const hideEventModal = () => {
     setEventModal(false);
   };
 
-  function onDateClick() {
+  function onEventClick(e) {
+    setSelectedEvent(e.event);
     setEventModal(true);
   }
 
   return (
     <>
-      <EventModal show={eventModal} onHideModal={hideEventModal} />
+      <EventModal
+        show={eventModal}
+        onHideModal={hideEventModal}
+        event={selectedEvent}
+      />
       <FullCalendar
         plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
         headerToolbar={{
@@ -27,18 +33,24 @@ const Calendar = () => {
           center: "",
           right: "today prev next",
         }}
+        eventClick={onEventClick}
         events={[
           {
-            id: "a",
-            title: "my event",
-            start: "2022-08-01",
+            id: "1",
+            title: "World Domination",
+            start: "2022-09-13T05:48:07+00:00",
+            end: "2022-09-13T11:48:07+00:00",
+            extendedProps: {
+              location: "https://meet.google.com",
+              team: "Research Team",
+              description:
+                "A meeting to brainstorm ideas on the new application to take over the world. The idea would then be implemented as our starting point in achieving our hopes and dreams to finally create a dystopian empire.",
+            },
           },
         ]}
-        eventColor={"#8985f233"}
+        eventColor={"#716DF2"}
         eventTextColor={"black"}
-        dateClick={onDateClick}
         initialView="dayGridMonth"
-        themeSystem=""
       />
     </>
   );
