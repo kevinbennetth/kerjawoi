@@ -5,6 +5,7 @@ import interactionPlugin from "@fullcalendar/interaction";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import { useState } from "react";
 import EventModal from "../modal/EventModal";
+import { BsJournalBookmark } from "react-icons/bs";
 
 const Calendar = () => {
   const [eventModal, setEventModal] = useState(false);
