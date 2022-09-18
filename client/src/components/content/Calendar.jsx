@@ -7,7 +7,7 @@ import { useState } from "react";
 import EventModal from "../modal/EventModal";
 
 const Calendar = () => {
-  const [eventModal, setEventModal] = useState(true);
+  const [eventModal, setEventModal] = useState(false);
 
   const hideEventModal = () => {
     setEventModal(false);
@@ -19,9 +19,7 @@ const Calendar = () => {
 
   return (
     <>
-      {eventModal && (
-        <EventModal show={eventModal} onHideModal={hideEventModal} />
-      )}
+      <EventModal show={eventModal} onHideModal={hideEventModal} />
       <FullCalendar
         plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
         headerToolbar={{

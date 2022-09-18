@@ -64,7 +64,7 @@ const Teams = ()=>{
   }
   return (
       <DashboardLayout>
-        {addTeam && <TeamModal show={addTeam} onHideModal={()=>setAddTeam(false)} onSubmit={addTeamHandler}/>}
+        <TeamModal show={addTeam} onHideModal={()=>setAddTeam(false)} onSubmit={addTeamHandler}/>
         <Title size='lg'>Teams</Title>
         <Breadcrumbs paths={paths}/>
         <div className="flex flex-col md:flex-row justify-between items-start mt-4 md:mt-8 gap-2 md:gap-0">

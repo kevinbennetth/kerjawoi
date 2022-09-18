@@ -52,11 +52,11 @@ const ProjectDashboard = ()=>{
   }
   return (
       <DashboardLayout>
-        {addProject && <ProjectModal 
+        <ProjectModal 
           show={addProject} 
           onHideModal={()=>setAddProject(false)}
           onSubmit={addProjectHandler}
-        />}
+        />
         <Title size='lg'>Team Sekrum</Title>
         <Breadcrumbs paths={paths}/>
         <TeamHeader name='sekrum'/>
