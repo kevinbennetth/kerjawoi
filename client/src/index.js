@@ -1,7 +1,6 @@
-import React from 'react';
+import './assets/css/index.css';
 import ReactDOM from 'react-dom/client';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import './index.css';
 import Dashboard from './pages/dashboard';
 import CalendarPage from './pages/calendar';
 import Teams from './pages/teams';
@@ -25,7 +24,7 @@ root.render(
             <Route path='teams' element={<Teams/>}/>
             <Route path='teams/:teamId' element={<ProjectDashboard/>}/>
             <Route path='teams/:teamId/projects' element={<ProjectDashboard/>}/>
-            <Route path='teams/:teamId/people' element={<People/>}/>
+            <Route path='teams/:teamId/people' element={<People admin={true}/>}/>
             <Route path='teams/:teamId/meeting' element={<Meeting/>}/>
             <Route path='teams/:teamId/settings' element={<Settings/>}/>    
         </Routes>

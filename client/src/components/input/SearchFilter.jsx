@@ -39,9 +39,9 @@ const SearchFilter = ({name, filters, submit, chooseFilters})=>{
                         onClick={submitQuery}
                     />
                 </div>
-                <div className='z-50 p-3 bg-white drop-shadow-lg rounded'>
+                <div className='z-40 p-3 bg-white drop-shadow-lg rounded'>
                     <VscListFilter className='text-sm md:text-2xl text-black cursor-pointer' onClick={changeDropdown}/>
-                    <div className={`absolute md:ml-2 z-50 bg-white border-black/40 rounded ${filterDropdown?"flex flex-col":"hidden"}`}>
+                    <div className={`absolute md:ml-2 z-40 bg-white border-black/40 rounded ${filterDropdown?"flex flex-col":"hidden"}`}>
                         {filters.map((filter, key)=>{
                             return (
                                 <p 
