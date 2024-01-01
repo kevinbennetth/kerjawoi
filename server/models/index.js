@@ -1,11 +1,9 @@
 const Team = require("./team");
 const User = require("./user");
+const TeamMember = require("./teamMember");
 
 const LocationType = require("./meetings/locationType");
 const Meeting = require("./meetings/meeting");
-
-const TeamMember = require("./members/teamMember");
-const UserPosition = require("./members/userPosition");
 
 const Project = require("./projects/projects");
 const Section = require("./projects/section");
@@ -17,7 +15,7 @@ const Category = require("./projects/category");
 module.exports = { 
     Team, User, 
     LocationType, Meeting, 
-    MeetingMember, TaskMember, TeamMember, UserPosition, 
+    TeamMember, 
     Project, Section, Task, 
-    AttachmentType, TaskAttachment, Category, TaskCategory
+    AttachmentType, TaskAttachment, Category
 }

@@ -2,7 +2,7 @@ import { MdNavigateBefore, MdNavigateNext } from "react-icons/md";
 
 const PageIndicator = ({ pages, current, prev, next }) => {
   const prevPage = current <= 1 ? false : current - 1;
-  const nextPage = current == pages ? false : current + 1;
+  const nextPage = current === pages ? false : current + 1;
   return (
     <div className="mt-10 float-right flex gap-2 items-center text-dark-purple text-lg font-bold">
       {prevPage && (
